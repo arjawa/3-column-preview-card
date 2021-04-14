@@ -1,0 +1,129 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+/* mixins */
+@mixin flex-center() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* variables */
+$tablet: 768px;
+
+/* css variables */
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --darker-cyan: hsl(179, 100%, 13%);
+  --white: hsla(0, 0%, 100%, 0.75);
+  --lighter-gray: hsl(0, 0%, 95%);
+}
+
+/* base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @include flex-center;
+  min-height: 100vh;
+  background-color: var(--lighter-gray);
+  font-size: 15px;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* card section */
+.card-section {
+  @include flex-center;
+  
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 48px;
+  height: 27.75rem;
+  
+  &:first-child {
+    border-radius: 8px 8px 0 0;
+    @media screen and (min-width: $tablet) {
+      border-radius: 8px 0 0 8px;
+    }
+  }
+  
+  &:last-child {
+    border-radius: 0 0 8px 8px;
+    @media screen and (min-width: $tablet) {
+      border-radius: 0 8px 8px 0;
+    }
+  }
+  
+  &--bg-orange {
+    background-color: var(--bright-orange);
+  }
+  
+  &--bg-cyan {
+    background-color: var(--dark-cyan);
+  }
+  
+  &--bg-dark-cyan {
+    background-color: var(--darker-cyan);
+  }
+  
+  &__title {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 1.75rem;
+    color: var(--lighter-gray);
+    text-transform: uppercase;
+  }
+  
+  &__desc {
+    color: var(--white);
+  }
+  
+  &__btn {
+    border: none;
+    padding: 16px 38px;
+    border-radius: 38px;
+    background-color: var(--lighter-gray);
+    font-weight: bold;
+    transition: all 0.3s linear;
+    
+    &:hover {
+      background-color: transparent;
+      border: 1px solid var(--lighter-gray);
+      color: var(--lighter-gray);
+      cursor: pointer;
+    }
+    
+    &:focus {
+      outline: none;
+    }
+    
+    &--orange {
+      color: var(--bright-orange);
+    }
+    
+    &--cyan {
+      color: var(--dark-cyan);
+    }
+    
+    &--dark-cyan {
+      color: var(--darker-cyan);
+    }
+  }
+}

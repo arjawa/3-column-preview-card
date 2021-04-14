@@ -1,0 +1,119 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
+/* mixins */
+/* variables */
+/* css variables */
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --darker-cyan: hsl(179, 100%, 13%);
+  --white: hsla(0, 0%, 100%, 0.75);
+  --lighter-gray: hsl(0, 0%, 95%);
+}
+
+/* base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--lighter-gray);
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* card section */
+.card-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .card-section {
+    flex-direction: row;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 48px;
+  height: 27.75rem;
+}
+.card:first-child {
+  border-radius: 8px 8px 0 0;
+}
+@media screen and (min-width: 768px) {
+  .card:first-child {
+    border-radius: 8px 0 0 8px;
+  }
+}
+.card:last-child {
+  border-radius: 0 0 8px 8px;
+}
+@media screen and (min-width: 768px) {
+  .card:last-child {
+    border-radius: 0 8px 8px 0;
+  }
+}
+.card--bg-orange {
+  background-color: var(--bright-orange);
+}
+.card--bg-cyan {
+  background-color: var(--dark-cyan);
+}
+.card--bg-dark-cyan {
+  background-color: var(--darker-cyan);
+}
+.card__title {
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 1.75rem;
+  color: var(--lighter-gray);
+  text-transform: uppercase;
+}
+.card__desc {
+  color: var(--white);
+}
+.card__btn {
+  border: none;
+  padding: 16px 38px;
+  border-radius: 38px;
+  background-color: var(--lighter-gray);
+  font-weight: bold;
+  transition: all 0.3s linear;
+}
+.card__btn:hover {
+  background-color: transparent;
+  border: 1px solid var(--lighter-gray);
+  color: var(--lighter-gray);
+  cursor: pointer;
+}
+.card__btn:focus {
+  outline: none;
+}
+.card__btn--orange {
+  color: var(--bright-orange);
+}
+.card__btn--cyan {
+  color: var(--dark-cyan);
+}
+.card__btn--dark-cyan {
+  color: var(--darker-cyan);
+}
+
+/*# sourceMappingURL=main.css.map */
